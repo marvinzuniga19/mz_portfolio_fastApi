@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ request.url_for('static', path='/css/styles.css') }}">
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Marvin's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="vanta-canvas" class="hero-section">
+        <div class="container">
+            <h1>print ("Hi, I'm Marvin Zuniga")</h1>
+            <p>A passionate Python Developer building modern and efficient web solutions.</p>
+            <a href="/static/mzcv.pdf" download class="btn btn-primary btn-lg">Download CV</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section id="about" class="mb-5 py-5">
+            <h2 class="section-title">About Me</h2>
+            <p class="lead text-center">I am a Python developer with extensive experience in creating robust web applications, data processing scripts, and automation tools. My expertise spans across various Python frameworks and libraries, including FastAPI, Flask, Django and Flet. I am passionate about writing clean, efficient, and scalable code, and constantly exploring new technologies to deliver innovative solutions.</p>
+            <p class="text-center">Besides programming, I like listening to music, hiking, going to the movies, playing video games, occasionally reviewing open source projects.</p>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="mb-5 py-5">
+            <h2 class="section-title">My Projects</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1: Python Web Scraper</h5>
+                            <p class="card-text">A robust Python script designed to efficiently extract and parse data from various websites. Utilizes libraries like Beautiful Soup and Requests for seamless data retrieval and processing.</p>
+                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Beautiful Soup, Requests</small></p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2: Flutter Mobile App</h5>
+                            <p class="card-text">A cross-platform mobile application developed with Flutter, showcasing a clean UI/UX and integration with backend APIs. Designed for [mention app purpose, e.g., task management, data visualization].</p>
+                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Flutter, Dart</small></p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3: Flet Desktop Dashboard</h5>
+                            <p class="card-text">An interactive desktop dashboard built using Flet, providing real-time data visualization and analytics. Features a responsive layout and intuitive controls.</p>
+                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Flet</small></p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="mb-5 py-5">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="lead text-center">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+            <ul class="list-unstyled text-center fs-5">
+                <li><i class="bi bi-envelope-fill"></i> Email: <a href="mailto:marvin_zuniga19@outlook.com" target="_blank" class="text-decoration-none">marvin_zuniga19@outlook.com</a></li>
+                <li><i class="bi bi-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/marvin-z%C3%BAniga-alvarado-06b3361b0/" target="_blank" class="text-decoration-none">Marvin Zuniga</a></li>
+                <!-- Add other contact methods as needed, e.g., GitHub -->
+                <li><i class="bi bi-github"></i> GitHub: <a href="https://github.com/marvinzuniga19" target="_blank" class="text-decoration-none">marvinzuniga19</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Marvin Zuniga. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Vanta.js dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="{{ request.url_for('static', path='/js/main.js') }}"></script>
+    
+    <!-- Optional: Bootstrap Icons (if you want to use them) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #232425;
+        }
+        
+        .navbar-brand {
+            color: #ffffff !important;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .nav-link:hover {
+            color: #00bfff !important;
+            transform: scale(1.05);
+        }
+        .hero-section {
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #007bff;
+            text-align: center;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-title {
+            color: #007bff;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        /* Add more space between sections */
+        section {
+            margin-bottom: 6rem; /* Adjust as needed */
+        }
+    
