@@ -1,7 +1,6 @@
 
         body {
-            /* background-image: url('/static/images/background.jpg'); */
-            background-color: rgb(20, 46, 56);
+            background-color: #022c5e;
             background-size: cover;
             background-attachment: fixed;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
