@@ -6,6 +6,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #ffffff;
         }
+
         
         .navbar-brand {
             color: #ffffff !important;
@@ -23,14 +24,15 @@
 
         .lastname {
             color: #D8002D;
-            
         }
+
         .hero-section {
             color: white;
             padding: 100px 0;
             text-align: center;
             margin-bottom: 50px;
         }
+
         .hero-section h1 {
             font-size: 3.5rem;
             font-weight: 700;
@@ -38,6 +40,7 @@
             font-weight: bold;
            
         }
+
         .hero-section p {
             font-size: 1.25rem;
             margin-bottom: 30px;
@@ -51,8 +54,6 @@
             color: #ffffff;
         }
 
-    
-
         .section-title {
             font-size: 2.5rem;
             font-weight: 600;
@@ -60,21 +61,25 @@
             color: #ffffff;
             text-align: center;
         }
+
         .card {
             border: none;
-            background-color: #ececec; ;
+            background-color: #111827 ; 
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
         }
+
         .card:hover {
             transform: translateY(-5px);
         }
+
         .card-title {
             color: #007bff;
         }
+        
         .card-text {
-            color: #6c757d;
+            color: #ffffff;
         }
         
         .footer {
