@@ -1,119 +1,306 @@
+/* CSS Variables */
+:root {
+    --primary-bg: rgb(9,26,40);
+    --card-bg: #111827;
+    --accent-color: #D8002D;
+    --hover-color: #00bfff;
+    --text-color: #ffffff;
+    --muted-text: #e0e0e0;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --card-shadow-hover: rgba(0, 123, 255, 0.3);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
 
-        body {
-            background-color: rgb(9,26,40);
-            background-size: cover;
-            background-attachment: fixed;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff;
-        }
+body.light-theme {
+    --primary-bg: #f7f9fc;
+    --card-bg: #ffffff;
+    --accent-color: #D8002D;
+    --hover-color: #0d6efd;
+    --text-color: #0f172a;
+    --muted-text: #4b5563;
+    --card-shadow: rgba(15, 23, 42, 0.08);
+    --card-shadow-hover: rgba(13, 110, 253, 0.2);
+    --border-color: rgba(15, 23, 42, 0.08);
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
 
-        
-        .navbar-brand {
-            color: #ffffff !important;
-        }
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
 
-        .nav-link {
-            color: #ffffff !important;
-            transition: all 0.2s ease-in-out;
-        }
-        
-        .nav-link:hover {
-            color: #00bfff !important;
-            transform: scale(1.05);
-        }
+body {
+    background-color: var(--primary-bg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    padding-top: 76px; /* Space for fixed navbar */
+}
 
-        .lastname {
-            color: #D8002D;
-        }
+/* Navbar Styles */
+.navbar {
+    background-color: var(--primary-bg) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
+}
 
-        .hero-section {
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-            margin-bottom: 50px;
-        }
+.navbar-brand {
+    color: var(--text-color) !important;
+    display: flex;
+    align-items: center;
+}
 
-        .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            font-weight: bold;
-           
-        }
+.navbar-logo {
+    height: 40px;
+    margin-right: 10px;
+}
 
-        .hero-section p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-        }
+.nav-link {
+    color: var(--text-color) !important;
+    transition: all 0.2s ease-in-out;
+}
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-top: 75px;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
+.nav-link:hover {
+    color: var(--hover-color) !important;
+    transform: scale(1.05);
+}
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 40px;
-            color: #ffffff;
-            text-align: center;
-        }
+.nav-link.active {
+    color: var(--hover-color) !important;
+}
 
-        .card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            border: none;
-            padding: 1rem;
-            background-color: #111827 ; 
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
+#themeToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--text-color);
+    border-color: var(--text-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
 
-        .card p {
-            flex-grow: 1;
-        }
+#themeToggle:hover {
+    color: #ffffff;
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
 
-        .view-button-container {
-            margin-top: 20px;
-        }
+body.light-theme #themeToggle:hover {
+    color: #ffffff;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+/* Hero Section */
+.hero-section {
+    color: var(--text-color);
+    padding: 100px 0;
+    text-align: center;
+    margin-bottom: 50px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
 
-        .card-title {
-            color: #007bff;
-        }
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
 
-        .card-body {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .card .btn {
-            margin-top: auto;
-        }
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
 
-        .hero-section .btn {
-            margin: auto;
-        }
-        
-        .footer {
-            background-color: rgb(9,26,40);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
 
-        /* Add more space between sections */
-        section {
-            margin-bottom: 6rem; /* Adjust as needed */
-        }
+.lastname {
+    color: var(--accent-color);
+}
+
+/* Section Styles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+section {
+    margin-bottom: 6rem;
+    scroll-margin-top: 100px; /* Offset for fixed navbar */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-fade {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Card Styles */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border: none;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px var(--card-shadow-hover);
+}
+
+.card p {
+    flex-grow: 1;
+}
+
+.card-title {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .btn {
+    margin-top: auto;
+}
+
+.card-text {
+    color: var(--muted-text);
+}
+
+/* Contact Links */
+.contact-link {
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.contact-link:hover {
+    color: var(--hover-color);
+    transform: scale(1.2);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--hover-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.back-to-top.show {
+    display: flex;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
     
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.2rem;
+    }
+    
+    .contact-link {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-logo {
+        height: 30px;
+    }
+}
+
+/* Smooth scroll offset for anchor links */
+:target {
+    scroll-margin-top: 100px;
+}

@@ -3,29 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvin's Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Marvin Zúniga - Python Developer Portfolio</title>
+    <meta name="description" content="Portfolio de Marvin Zúniga - Desarrollador Python especializado en FastAPI, Flask, Django y Flet. Proyectos web, aplicaciones desktop y móviles.">
+    <meta name="keywords" content="Python developer, FastAPI, Flask, Django, Flet, portfolio, web developer, Python programmer">
+    <meta name="author" content="Marvin Zúniga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Marvin Zúniga - Python Developer Portfolio">
+    <meta property="og:description" content="Portfolio profesional de Marvin Zúniga, desarrollador Python especializado en aplicaciones web y desktop">
+    <meta property="og:image" content="{{ request.url_for('static', path='/images/yo.png') }}">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marvin Zúniga - Python Developer Portfolio">
+    <meta name="twitter:description" content="Portfolio profesional de Marvin Zúniga, desarrollador Python">
+    
+    <!-- Favicon -->
     <link rel="icon" href="{{ request.url_for('static', path='/images/yo.ico') }}" type="image/x-icon">
-
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
     <!-- Bootstrap CSS -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ request.url_for('static', path='/css/styles.css') }}">
-    
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgb(9,26,40);">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="{{ request.url_for('static', path='/images/yo.png') }}" alt="Logo" style="height: 40px;margin-right: 10px;">
+            <a class="navbar-brand" href="#" aria-label="Home">
+                <img src="{{ request.url_for('static', path='/images/yo.png') }}" alt="Marvin Zúniga Logo" class="navbar-logo">
                 Marvin's Portfolio
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About Me</a>
                     </li>
@@ -36,6 +60,9 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
+                <button id="themeToggle" class="btn btn-outline-light btn-sm ms-lg-3 mt-3 mt-lg-0" type="button" aria-label="Cambiar tema">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -45,140 +72,69 @@
         <div class="container">
             <h1 class="hero-title">HI, I'M MARVIN <span class="lastname">ZUNIGA</span></h1>
             <p>A passionate Python Developer building modern and efficient web solutions.</p>
-            <a href="/static/mzcv.pdf" download class="btn btn-primary btn-lg">Download CV</a>
+            <a href="/static/mzcv.pdf" download class="btn btn-primary btn-lg" aria-label="Download CV">Download CV</a>
         </div>
     </header>
 
     <div class="container">
         <!-- About Me Section -->
-        <section id="about" class="mb-5 py-5">
+        <section id="about" class="mb-5 py-5 section-fade">
             <h2 class="section-title">About Me</h2>
             <p class="lead text-center">I am a Python developer with extensive experience in creating robust web applications, data processing scripts, and automation tools. My expertise spans across various Python frameworks and libraries, including FastAPI, Flask, Django and Flet. I am passionate about writing clean, efficient, and scalable code, and constantly exploring new technologies to deliver innovative solutions.</p>
             <p class="text-center">Besides programming, I like listening to music, hiking, going to the movies, playing video games, occasionally reviewing open source projects.</p>
         </section>
         
         <!-- Projects Section -->
-        <section id="projects" class="mb-5 py-5">
+        <section id="projects" class="mb-5 py-5 section-fade">
             <h2 class="section-title">Some of my Projects</h2>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                {% for project in projects %}
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">App Image Compressor</h5>
-                            <p class="card-text">Desktop application developed with Python to compress images</p>
-                            <img src="" alt="">
-                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Pillow, ttkbootstrap</small></p>
-                            <a href="https://github.com/marvinzuniga19/Python_app_Compressor_image" target="_blank" class="btn btn-outline-primary">View Project</a>
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <p class="card-text">{{ project.description }}</p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <strong>Technologies:</strong> {{ project.technologies | join(", ") }}
+                                </small>
+                            </p>
+                            <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary" aria-label="View {{ project.title }} on GitHub">View Project</a>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Web Resume</h5>
-                            <p class="card-text">This is a one-page web résumé project for Marvin Zúniga. The site is designed to be simple, clean, and easy to navigate.</p>
-                            <img src="" alt="">
-                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> HTML, CSS, Javascript</small></p>
-                            <a href="https://github.com/marvinzuniga19/Mz-Resume" target="_blank" class="btn btn-outline-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Python Web Scraper</h5>
-                            <p class="card-text">A robust Python script designed to efficiently extract and parse data from the website. Utilizes libraries like Beautiful Soup and Requests for seamless data retrieval and processing.</p>
-                            <img src="" alt="">
-                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Beautiful Soup, Requests</small></p>
-                            <a href="https://github.com/marvinzuniga19/flask_webJob_scraper" target="_blank" class="btn btn-outline-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">YES OR NO, Flutter Mobile App </h5>
-                            <p class="card-text">Yes/No App is a simple and interactive application that helps users make quick decisions by providing random Yes or No answers. Ideal for moments of indecision, the app offers an easy-to-use interface for instant responses.</p>
-                            <img src="" alt="">
-                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Flutter, Dart</small></p>
-                            <a href="https://github.com/marvinzuniga19/Yes_no_app target="_blank" class="btn btn-outline-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Youtube Music Flet Downloader</h5>
-                            <p class="card-text">🎵 YouTube Music Downloader with Python and Flet
-                            I have developed a cross-platform application using that allows you to download music directly from YouTube easily and quickly.</p>
-                            <img src="" alt="">
-                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Flet</small></p>
-                            <a href="https://github.com/marvinzuniga19/youtube_music_downloader" target="_blank" class="btn btn-outline-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more projects as needed -->
-                 <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">News Blog with Flask</h5>
-                            <p class="card-text">A simple news blog built with Flask that allows publishing, editing, and displaying articles dynamically. Designed with a clean interface and powered by Python and Jinja templates, it provides a lightweight platform to share the latest updates and stories.</p>
-                            <img src="" alt="">
-                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Flask</small></p>
-                            <a href="https://github.com/marvinzuniga19/news_blog_with_Flask" target="_blank" class="btn btn-outline-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Invoice Generator Desktop App</h5>
-                            <p class="card-text">A Python desktop application built with Flet and ReportLab that allows you to create custom invoices and save them as PDF files easily and quickly..</p>
-                            <img src="" alt="">
-                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Flet, ReportLab</small></p>
-                            <a href="https://github.com/marvinzuniga19/invoice_Builder" target="_blank" class="btn btn-outline-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Task Manager - CRUD App with Flutter</h5>
-                            <p class="card-text">This is a simple task management application (CRUD) developed with Flutter. It allows users to create, read, update and delete tasks, which are persistently stored in a local SQLite database..</p>
-                            <img src="" alt="">
-                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Flutter, Dart</small></p>
-                            <a href="https://github.com/marvinzuniga19/Flutter_Crud_App" target="_blank" class="btn btn-outline-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Image Compressor app with Flutter</h5>
-                            <p class="card-text">A simple and intuitive Flutter application to compress images quickly and easily.</p>
-                            <img src="" alt="">
-                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Flutter, Dart</small></p>
-                            <a href="https://github.com/marvinzuniga19/image_compressor_app" target="_blank" class="btn btn-outline-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </section>
         
         <!-- Contact Section -->
-        <section id="contact" class="mb-5 py-5">
+        <section id="contact" class="mb-5 py-5 section-fade">
             <h2 class="section-title">Contact Me</h2>
             <p class="lead text-center">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
             <ul class="list-unstyled text-center fs-4 d-flex justify-content-center gap-4">
-                <li><a href="mailto:marvin_zuniga19@outlook.com" target="_blank" class="text-decoration-none"><i class="bi bi-envelope-fill"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/marvin-z%C3%BAniga-alvarado-06b3361b0/" target="_blank" class="text-decoration-none"><i class="bi bi-linkedin"></i></a></li>
-                <!-- Add other contact methods as needed, e.g., GitHub -->
-                <li><a href="https://github.com/marvinzuniga19" target="_blank" class="text-decoration-none"><i class="bi bi-github"></i></a></li>
+                <li>
+                    <a href="mailto:marvin_zuniga19@outlook.com" target="_blank" rel="noopener noreferrer" class="text-decoration-none contact-link" aria-label="Send email to Marvin Zúniga">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/marvin-z%C3%BAniga-alvarado-06b3361b0/" target="_blank" rel="noopener noreferrer" class="text-decoration-none contact-link" aria-label="Visit Marvin Zúniga's LinkedIn profile">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/marvinzuniga19" target="_blank" rel="noopener noreferrer" class="text-decoration-none contact-link" aria-label="Visit Marvin Zúniga's GitHub profile">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </li>
             </ul>
         </section>
     </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Volver arriba" title="Volver arriba">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
     <!-- Footer -->
     <footer class="footer">
@@ -192,8 +148,5 @@
 
     <!-- Custom JS -->
     <script src="{{ request.url_for('static', path='/js/main.js') }}"></script>
-    
-    <!-- Optional: Bootstrap Icons (if you want to use them) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </body>
 </html>
