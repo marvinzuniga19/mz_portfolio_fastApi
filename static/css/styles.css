@@ -121,10 +121,67 @@ body.light-theme #themeToggle:hover {
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--text-color);
+    animation: heroTitleAnimation 1.2s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    position: relative;
+    display: inline-block;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+@keyframes heroTitleAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    60% {
+        opacity: 0.8;
+        transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-title:hover {
+    text-shadow: 0 0 20px rgba(0, 191, 255, 0.6), 
+                 0 0 30px rgba(0, 191, 255, 0.4), 
+                 0 0 40px rgba(0, 191, 255, 0.3),
+                 0 0 60px rgba(0, 191, 255, 0.2);
 }
 
 .lastname {
     color: var(--accent-color);
+    animation: lastnameAnimation 1.5s ease-out 0.3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    display: inline-block;
+    position: relative;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+@keyframes lastnameAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px) scale(0.8);
+    }
+    60% {
+        opacity: 0.7;
+        transform: translateX(5px) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.hero-title:hover .lastname,
+.lastname:hover {
+    text-shadow: 0 0 20px rgba(216, 0, 45, 0.7), 
+                 0 0 30px rgba(216, 0, 45, 0.5), 
+                 0 0 40px rgba(216, 0, 45, 0.4),
+                 0 0 60px rgba(216, 0, 45, 0.3);
 }
 
 /* Section Styles */
