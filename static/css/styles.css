@@ -255,6 +255,23 @@ section {
     color: var(--muted-text);
 }
 
+.card-img-top {
+    height: 280px;
+    width: 100%;
+    object-fit: contain;
+    background-color: rgba(128, 128, 128, 0.05);
+    border-radius: 8px 8px 0 0;
+    padding: 15px;
+}
+
+.placeholder-image {
+    height: 200px;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.1);
+    border-radius: 8px 8px 0 0;
+    border: 2px dashed rgba(128, 128, 128, 0.3);
+}
+
 /* Contact Links */
 .contact-link {
     color: var(--text-color);
