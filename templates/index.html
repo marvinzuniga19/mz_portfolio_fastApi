@@ -21,12 +21,20 @@
     <meta name="twitter:title" content="Marvin Zúniga - Python Developer Portfolio">
     <meta name="twitter:description" content="Portfolio profesional de Marvin Zúniga, desarrollador Python">
     
+    <!-- Preload critical images -->
+    <link rel="preload" href="{{ request.url_for('static', path='/images/yo.png') }}" as="image">
+    
     <!-- Favicon -->
     <link rel="icon" href="{{ request.url_for('static', path='/images/yo.ico') }}" type="image/x-icon">
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -124,7 +132,7 @@
                 <div class="col-lg-8">
                     <div class="map-container">
                         <iframe 
-                            src="https://www.openstreetmap.org/export/embed.html?bbox=-86.3000%2C12.1100%2C-86.2500%2C12.1600&layer=mapnik&marker=12.1350%2C-86.2750"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=-86.265593%2C12.104518%2C-86.245593%2C12.154518&layer=mapnik&marker=12.129518%2C-86.255593"
                             class="map-frame"
                             allowfullscreen
                             loading="lazy"
@@ -162,6 +170,9 @@
         </section>
     </div>
 
+    <!-- Progress Bar -->
+    <div id="progressBar" class="progress-bar" aria-label="Reading progress"></div>
+    
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Volver arriba" title="Volver arriba">
         <i class="bi bi-arrow-up"></i>
