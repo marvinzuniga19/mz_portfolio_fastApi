@@ -218,15 +218,15 @@ section {
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100%;
-    max-height: 380px;
+    max-height: 350px;
     border: none;
     padding: 0.6rem;
     background-color: var(--card-bg);
     border-radius: 10px;
     box-shadow: 0 4px 8px var(--card-shadow);
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -235,7 +235,11 @@ section {
 }
 
 .card p {
-    flex-grow: 1;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .card-title {
@@ -247,6 +251,8 @@ section {
 .card-body {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    overflow: hidden;
 }
 
 .card .btn {
@@ -263,9 +269,9 @@ section {
 }
 
 .card-img-top {
-    height: 150px;
+    height: 140px;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     background-color: rgba(128, 128, 128, 0.05);
     border-radius: 8px 8px 0 0;
     padding: 8px;
