@@ -57,6 +57,9 @@
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#location">Location</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -111,6 +114,27 @@
                     </div>
                 </div>
                 {% endfor %}
+            </div>
+        </section>
+        
+        <!-- Location Section -->
+        <section id="location" class="mb-5 py-5 section-fade">
+            <h2 class="section-title">My Location</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=-86.3000%2C12.1100%2C-86.2500%2C12.1600&layer=mapnik&marker=12.1350%2C-86.2750"
+                            class="map-frame"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <p class="text-center mt-3">
+                        <small class="text-muted">Managua, Nicaragua</small>
+                    </p>
+                </div>
             </div>
         </section>
         
