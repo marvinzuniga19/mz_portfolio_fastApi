@@ -220,8 +220,9 @@ section {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    max-height: 450px;
     border: none;
-    padding: 1rem;
+    padding: 0.8rem;
     background-color: var(--card-bg);
     border-radius: 12px;
     box-shadow: 0 4px 8px var(--card-shadow);
@@ -239,7 +240,8 @@ section {
 
 .card-title {
     color: #007bff;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 
 .card-body {
@@ -249,19 +251,23 @@ section {
 
 .card .btn {
     margin-top: auto;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
 }
 
 .card-text {
     color: var(--muted-text);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
 .card-img-top {
-    height: 280px;
+    height: 200px;
     width: 100%;
     object-fit: contain;
     background-color: rgba(128, 128, 128, 0.05);
     border-radius: 8px 8px 0 0;
-    padding: 15px;
+    padding: 10px;
 }
 
 .placeholder-image {
