@@ -18,58 +18,59 @@ projects = [
         "image": "/images/pycompresor.png"
 
     },
-    {
+{
         "title": "Web Resume",
-        "description": "This is a one-page web résumé project for Marvin Zúniga. The site is designed to be simple, clean, and easy to navigate.",
+        "description": "One-page web résumé project for Marvin Zúniga. Simple, clean, and easy to navigate.",
         "technologies": ["HTML", "CSS", "Javascript"],
         "github_url": "https://github.com/marvinzuniga19/Mz-Resume",
         "image": "/images/resume.png"
+
     },
     {
         "title": "Python Web Scraper",
-        "description": "A robust Python script designed to efficiently extract and parse data from the website. Utilizes libraries like Beautiful Soup and Requests for seamless data retrieval and processing.",
+        "description": "Desktop application developed with Python to compress images",
         "technologies": ["Python", "Beautiful Soup", "Requests"],
         "github_url": "https://github.com/marvinzuniga19/flask_webJob_scraper",
         "image": "/images/webscraper.png"
     },
     {
         "title": "YES OR NO, Flutter Mobile App",
-        "description": "Yes/No App is a simple and interactive application that helps users make quick decisions by providing random Yes or No answers. Ideal for moments of indecision, the app offers an easy-to-use interface for instant responses.",
+        "description": "Desktop application developed with Python to compress images",
         "technologies": ["Flutter", "Dart"],
         "github_url": "https://github.com/marvinzuniga19/Yes_no_app",
         "image": "/images/chat.png"
     },
     {
         "title": "Youtube Music Flet Downloader",
-        "description": "🎵 YouTube Music Downloader with Python and Flet. I have developed a cross-platform application using that allows you to download music directly from YouTube easily and quickly.",
+        "description": "Desktop application developed with Python to compress images",
         "technologies": ["Python", "Flet"],
         "github_url": "https://github.com/marvinzuniga19/youtube_music_downloader",
         "image": "/images/youtubedownload.png"
     },
     {
         "title": "News Blog with Flask",
-        "description": "A simple news blog built with Flask that allows publishing, editing, and displaying articles dynamically. Designed with a clean interface and powered by Python and Jinja templates, it provides a lightweight platform to share the latest updates and stories.",
+        "description": "Desktop application developed with Python to compress images",
         "technologies": ["Python", "Flask"],
         "github_url": "https://github.com/marvinzuniga19/news_blog_with_Flask",
         "image": "/images/blog.png"
     },
     {
         "title": "Invoice Generator Desktop App",
-        "description": "A Python desktop application built with Flet and ReportLab that allows you to create custom invoices and save them as PDF files easily and quickly.",
+        "description": "Desktop application developed with Python to compress images",
         "technologies": ["Python", "Flet", "ReportLab"],
         "github_url": "https://github.com/marvinzuniga19/invoice_Builder",
         "image": "/images/invoice.png"
     },
     {
         "title": "Task Manager - CRUD App with Flutter",
-        "description": "This is a simple task management application (CRUD) developed with Flutter. It allows users to create, read, update and delete tasks, which are persistently stored in a local SQLite database.",
+        "description": "Desktop application developed with Python to compress images",
         "technologies": ["Flutter", "Dart"],
         "github_url": "https://github.com/marvinzuniga19/Flutter_Crud_App",
         "image": "/images/crud.png"
     },
     {
         "title": "Image Compressor app with Flutter",
-        "description": "A simple and intuitive Flutter application to compress images quickly and easily.",
+        "description": "Desktop application developed with Python to compress images",
         "technologies": ["Flutter", "Dart"],
         "github_url": "https://github.com/marvinzuniga19/image_compressor_app",
         "image": "/images/compress.jpg"
